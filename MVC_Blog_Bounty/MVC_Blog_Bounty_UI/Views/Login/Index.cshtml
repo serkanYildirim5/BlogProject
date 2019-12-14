@@ -1,0 +1,32 @@
+﻿@model  MVC_Blog_Bountry_Entity.Model.Users
+@{
+    Layout = "~/Views/Shared/_LayoutPageLogin.cshtml";
+}
+
+        @using (Html.BeginForm("AdminPanel", "Home", FormMethod.Post))
+        {
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            @Html.TextBoxFor(a => a.Email)
+        </div>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                </div>
+                @Html.TextBoxFor(a=>a.Password)
+            </div>
+            <div class="row align-items-center remember">
+                <input type="checkbox">Remember Me
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn float-right login_btn">
+
+            </div>
+        }
+<div class="card-footer">
+    <div class="d-flex justify-content-center links" style="width:350px;">
+        Don't have an account?@Html.ActionLink("Sign Up", "UserEntry", "Login")
+    </div>
+</div>

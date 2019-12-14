@@ -1,0 +1,22 @@
+﻿@model MVC_Blog_Bountry_Entity.Model.Posts
+@using (Html.BeginForm("PostAdd", "Home", FormMethod.Post))
+{
+    <div class="form-group form-inline">
+        <div class="form-group col-lg-6 col-md-6 name">
+          Post Title:  @Html.TextBoxFor(a => a.PostTitle, new { @class = "form-control", @value = "FullName " })
+        </div>
+        <div class="form-group col-lg-6 col-md-6 email">
+          Post Text:  @Html.TextBoxFor(a => a.PostText, new { @class = "form-control", @value = " " })
+        </div>
+    </div>
+    <div class="form-group">
+      Post Image Url:  @Html.TextBoxFor(a => a.ImageUrl, new { @class = "form-control", @value = " " })
+    </div>
+                        <div class="form-group">
+                            @Html.TextAreaFor(a => a.CategoryId, new { @class = "form-control", @value = " " })
+                        </div>
+                        <div class="form-group">
+                           @*@Html.DropDownListFor(x => x.CategoryId,Model.Categorys)*@
+                        </div>
+                        <input type="submit" value="Post Add" class="primary-btn submit_btn text-uppercase">
+}
